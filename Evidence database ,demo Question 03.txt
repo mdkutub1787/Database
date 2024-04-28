@@ -1,0 +1,81 @@
+--Question No 1
+Create a table and name using your ID preceded by emp, which have 5 fields as eid, ename, salary, 
+hire_date and address with appropriate data types and create primary key on eid.
+---ANS--:
+create table J2EE(eid number(4)constraint sys_1281514_eid primary key,
+ename varchar2(20) not null,
+salary number(8,2)not null,
+hire_date date);
+
+--Question no 2
+alter TABLE ccdf
+add(department_id number(5),department_name VARCHAR2(15));
+
+--Question no 3
+insert into J2EE(eid,ename,salary,hire_date,department_id,department_name)
+VALUES(101,'Kutub',500000,'13-AUG-2000',201,'CCSL');
+
+
+--Question no 4
+
+create view J2EECCSL
+as
+select ename,department_name,salary
+from J2EE
+where department_id=80;
+
+--Question no 5
+create SEQUENCE J2EE_eid
+INCREMENT by 1
+START with 100
+maxvalue 999999
+nocache
+nocycle;
+
+--Question no 6
+
+insert into J2EE(eid, ename, salary, department_id, department_name)
+select e.employee_id, e.first_name, e.salary, d.department_id, d.department_name
+from employees e
+join departments d on d.department_id = e.department_id
+where d.department_id = 80;
+
+
+
+
+--Question no 7
+Create a table and name using your ID preceded by emp, which have 5 fields as eid, ename, salary, 
+hire_date and address with appropriate data types and create primary key on eid.
+--ANS--
+create table Kutub1281514(eid NUMBER(4)CONSTRAINT sys_Kutub1281514_eid PRIMARY key,
+ename VARCHAR2(20),salary number(8,2),hire_date date,address VARCHAR2(100));
+
+--Question no 8
+Displays the department numbers and average salaries for those departments with a maximum 
+salary that is greater than 12000?
+--ANS:
+select department_id,avg(salary)
+from employees
+group by department_id 
+having max(salary)>12000;
+
+--Question no 9
+Display the name whose name start from 'S'?
+---ANS:
+select last_name
+from employees
+where last_name like 'S%';
+
+--Question no 10
+Display the avg salary of employees of department Sales?
+---ANS:
+select avg(salary)
+from employees 
+natural join sales_reps;
+
+--Question no 11
+ Display the the name of employees joining in company in ascending order?
+---ANS:
+select last_name,hire_date
+from employees
+order by hire_date;
