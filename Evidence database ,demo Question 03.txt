@@ -40,6 +40,8 @@ nocache
 nocycle;
 
 --Question no 6
+Give an appropriate example of insert data from subqueries
+--ANS:
 
 insert into J2EE(eid, ename, salary, department_id, department_name)
 select e.employee_id, e.first_name, e.salary, d.department_id, d.department_name
