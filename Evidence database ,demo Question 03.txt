@@ -8,6 +8,8 @@ salary number(8,2)not null,
 hire_date date);
 
 --Question no 2
+Add two new columns named 'department_id'dept_name ALTER Table Command.
+--ANS:
 alter TABLE ccdf
 add(department_id number(5),department_name VARCHAR2(15));
 
