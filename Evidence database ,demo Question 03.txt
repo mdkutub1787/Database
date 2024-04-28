@@ -12,19 +12,24 @@ alter TABLE ccdf
 add(department_id number(5),department_name VARCHAR2(15));
 
 --Question no 3
+Insert values to the table.
+--ANS:
 insert into J2EE(eid,ename,salary,hire_date,department_id,department_name)
 VALUES(101,'Kutub',500000,'13-AUG-2000',201,'CCSL');
 
 
 --Question no 4
-
-create view J2EECCSL
+Create a view that which contains ename, dept_name and salary in department 80.
+---ANS:
+create view J2EECCSL 
 as
 select ename,department_name,salary
 from J2EE
 where department_id=80;
 
 --Question no 5
+Create a sequence?
+--ANS:
 create SEQUENCE J2EE_eid
 INCREMENT by 1
 START with 100
@@ -39,8 +44,6 @@ select e.employee_id, e.first_name, e.salary, d.department_id, d.department_name
 from employees e
 join departments d on d.department_id = e.department_id
 where d.department_id = 80;
-
-
 
 
 --Question no 7
